@@ -28,7 +28,7 @@ function CardComponent(props) {
 
     return (
         <CardContainer>
-            <img width={'128em'}src={Imagem}/><br/>
+            <PokemonPhoto src={Imagem}/><br/>
             {props.nomePokemon}<br/>
         </CardContainer>        
     )

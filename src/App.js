@@ -34,7 +34,7 @@ export default function UmPokemon(props) {  //preciso fazer outra pagina para ex
   
   const cardPokemon = pokemon.map((pokemon) => {
     return <CardComponent
-        nomePokemon={pokemon.name}
+        nomePokemon={pokemon.name.toUpperCase()}
         urlPokemon={pokemon.url}
       />
     
@@ -51,6 +51,6 @@ export default function UmPokemon(props) {  //preciso fazer outra pagina para ex
       </CardContainer>
     </>
 
-  );
+  )
 
 }

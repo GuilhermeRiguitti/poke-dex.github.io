@@ -2,10 +2,9 @@ import styled from "styled-components"
  
 export const NavBar = styled.div`
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-columns: 1fr 2fr 1fr;
     height: max-content;
-    width: 100%;
-    padding: 10px;   
+    width: 100%;  
     align-items: center;
     background-color: #2166FF ; 
     justify-items: center;
@@ -25,6 +24,7 @@ export const Button = styled.button`
 export const Logo = styled.img`
     width: 300px;
     height: 70px;
+    padding: 10px;
 `
 
 export const PokeDex = styled.img`
@@ -34,7 +34,7 @@ export const PokeDex = styled.img`
 `
 export const CardContainer = styled.div`
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
 
 

@@ -2,14 +2,17 @@ import styled from "styled-components";
 
 
 export const CardContainer = styled.div`
-  border: 1px solid gray;
-  width: 300px;
-  margin-bottom: 10px;
+  border: 2px solid green;
+  width: 200px;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 10px 0px 10px 0px
+  margin: 10px 0px 10px 0px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 4px gray;
+  padding: 10px;
 `;
 
 
@@ -23,5 +26,7 @@ export const CardFooter = styled.div`
 
 
 export const PokemonPhoto = styled.img`
-  width: 100%;
+  width: 50%;
+  box-shadow: 0.1px 5px 4px 0.1px;
+  border-radius: 50px;
 `;
