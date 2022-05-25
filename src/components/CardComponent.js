@@ -1,18 +1,41 @@
-import styled from "styled-components";
-import { PostContainer, PokemonPhoto, PostFooter } from "./styled-components/StyledCardComponent";
-export default function CardComponent() {
-return (
-    <PostContainer>
+import React from "react";
+import { DivBotoes, BotaoCard, CardContainer, CardFooter, PokemonPhoto } from "./styled-components/StyledCardComponent"
+import axios from "axios";
+import { useState, useEffect } from "react";
 
-      <PokemonPhoto src={this.props.fotoPost} alt={'Imagem do post'} />
+function CardComponent(props) {
+    const [Imagem, setImagem] = useState ("")
+    
+    useEffect (() =>{
+        pegarFoto()
+    }, []
+    )
+    
+    const pegarFoto = () => {
+          axios 
+            .get(props.urlPokemon,{
+              headers: {
+                "Content-Type": "application/json"
+              }
+            })
+            .then((response) => { 
+                setImagem(response.data.sprites.front_default)
+            })
+        }
 
-      <PostFooter>
-        
-        /botao de adicionar 
-      </PostFooter>
-    </PostContainer>
-  );
+    return (
+        <CardContainer>
+            <PokemonPhoto src={Imagem}/><br/>
+            {props.nomePokemon}<br/>
+            <span>
+                <DivBotoes>
+                    <BotaoCard >Adicionar</BotaoCard>
+                    <BotaoCard onClick={ () => {props.onClickDetalhes}}>Detalhes</BotaoCard>
+                </DivBotoes>
+            </span>
+        </CardContainer>        
+    )
+    
 }
 
-
-
+export default CardComponent;

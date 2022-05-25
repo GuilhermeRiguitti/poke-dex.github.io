@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios";
 import { CardContainer, PokemonPhoto, NavBar, Button, Logo, PokeDex } from "./components/styled-components/StyledHomeComponent";
-import CardComponent from "./CardComponent";
+import CardComponent from "./components/CardComponent";
 
 export default function UmPokemon(props) {  //preciso fazer outra pagina para exibir abilidadese fotos pq é um vetor de objetos >> com uma funcao aqui nessa pagina para puxar a outra pagina com uma nova requisição nela
   const [imagem, setImagem] = useState ([])
@@ -33,11 +33,12 @@ export default function UmPokemon(props) {  //preciso fazer outra pagina para ex
 
   
   const cardPokemon = pokemon.map((pokemon) => {
-    return <CardComponent
+    return( 
+      <CardComponent
         nomePokemon={pokemon.name.toUpperCase()}
         urlPokemon={pokemon.url}
       />
-    
+    )
   })
   
   return (
