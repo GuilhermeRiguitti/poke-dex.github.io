@@ -4,7 +4,7 @@ export const NavBar = styled.div`
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     height: max-content;
-    width: 100%;  
+    width: 100vh;  
     align-items: center;
     background-color: #2166FF ; 
     justify-items: center;

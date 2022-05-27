@@ -4,7 +4,6 @@ import styled from "styled-components";
 export const CardContainer = styled.div`
   border: 2px solid green;
   width: 200px;
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,6 +23,18 @@ export const CardFooter = styled.div`
   justify-content: space-between;
 `;
 
+export const DivBotoes = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 2fr
+`
+
+export const BotaoCard = styled.button`
+  background-color: rgba(255, 0, 0, 0.4);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  
+`
 
 export const PokemonPhoto = styled.img`
   width: 50%;
