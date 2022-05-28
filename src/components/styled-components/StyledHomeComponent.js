@@ -32,6 +32,7 @@ export const PokeDex = styled.img`
     height: 50px;
  
 `
+
 export const CardContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
