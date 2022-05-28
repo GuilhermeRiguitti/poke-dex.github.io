@@ -3,11 +3,7 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
   border: 2px solid green;
-<<<<<<< HEAD
   width: 200px;
-=======
-  width: 250px;
->>>>>>> 46111869cd6a704778200c31fd4e4608ae73b42b
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,27 +12,17 @@ export const CardContainer = styled.div`
   border-radius: 10px;
   box-shadow: 3px 3px 4px gray;
   padding: 8px;
-`;
-
-export const DivBotoes = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 2fr
-
 `
-export const BotaoCard = styled.div`
-  background-color: rgba(255, 0, 0, 0.4);
-  padding: 10px;
-  border-radius: 10px;
-  margin: 10px;
-  
-`
+
+
+
 export const CardFooter = styled.div`
   height: 40px;
   display: flex;
   align-items: center;
   padding: 0 10px;
   justify-content: space-between;
-`;
+`
 
 export const DivBotoes = styled.div`
   display: grid;
@@ -55,4 +41,4 @@ export const PokemonPhoto = styled.img`
   width: 50%;
   box-shadow: 0.1px 5px 4px 0.1px;
   border-radius: 50px;
-`;
+`
