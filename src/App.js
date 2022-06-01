@@ -1,41 +1,14 @@
-import React from "react"
-import { useState, useEffect} from "react"
-import HomePageComponent from "./components/HomePageComponent"
-import DetailComponent from "./components/DetailComponent"
-import axios from "axios"
-
-
-export default function App() {
-  const [pagina, setPagina] = useState("ListPage")
-  const [url, setUrl] = useState ("")
+import React from "react";
+import { Router } from "../src/routes/router";
 
 
 
-  const mudarPagina = (pagina, url) => {
-    setPagina(pagina)
-    setUrl(url)
-  }
-  
-  
-
- 
-      let paginaAtual = ""
-      if(pagina === "ListPage") {
-        paginaAtual = <HomePageComponent/>
-          
-        
-      }else{paginaAtual = 
-        <>
-          <DetailComponent url={url}/>
-          <button onClick={ () => {setPagina("ListPage")}}>Voltar</button>
-        </>
-      }
-
-  
+const App = () => {
   return (
-      <>
-        {paginaAtual}
-      </>
-    );
-  }
-  
+    <div>
+     <Router/>
+    </div>
+  );
+};
+
+export default App;

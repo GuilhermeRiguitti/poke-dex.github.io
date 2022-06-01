@@ -1,49 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { DivBotoes, BotaoCard, CardContainer,  PokemonPhoto } from "./styled-components/StyledCardComponent";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { useRequestDetails } from "../Hooks/useRequestDetails";
+import { useNavigate, useParams } from "react-router-dom";
+import { goToAboutPage } from "../routes/coordinator";
 
 function CardComponent(props) {
-    const [Imagem, setImagem] = useState ("")
-    
-    useEffect (() =>{
-        pegarFoto()
-    }, []
-    )
-    
-    const pegarFoto = () => {
-          axios 
-            .get(props.urlPokemon,{
-              headers: {
-                "Content-Type": "application/json"
-              }
-            })
-            .then((response) => { 
-                setImagem(response.data.sprites.front_default)
-            })
-        }
-    
-    
-    
+    const navigate = useNavigate()
+    const [stats, sprites, moves, isLoading, error] = useRequestDetails(props.urlPokemon)
+    const params = useParams()
 
 
+    const statsPokemon = stats && stats.map((stat) => {
+      return <>{stat.base_stat}</>
+    })
+
+   
+    if( params.pagina !== "detail"){ //s
     return (
         <CardContainer>
-            <PokemonPhoto src={Imagem}/><br/>
             {props.nomePokemon}<br/>
+            <img src={sprites.front_default}/>
             <span>
                 <DivBotoes>
-                    <BotaoCard >Adicionar</BotaoCard>
-
-                    <BotaoCard onClick={ () => {props.onClickDetalhes("Detalhes", props.urlPokemon)}}>Detalhes</BotaoCard>
-
-            
-
+                    <BotaoCard>Adicionar</BotaoCard> 
+                    <BotaoCard onClick={() => goToAboutPage(navigate, 'detail')}>Detalhes</BotaoCard>
                 </DivBotoes>
             </span>
         </CardContainer>        
     )
-    
+    }else{
+      return (
+        <>  
+        <p>asdasdasds</p>
+           {statsPokemon}
+        </>
+      ) 
+    }
 }
 
 
