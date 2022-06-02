@@ -2,7 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 
 export const useRequestDetails= (url) => {
-    const [id, setId] = useState ({})
+    const [id, setId] = useState("")
     const [stats, setStats] = useState([])
     const [sprites, setSprites] = useState({})
     const [moves, setMoves] = useState([])
@@ -19,7 +19,7 @@ export const useRequestDetails= (url) => {
             }
             })
             .then((res) => { 
-                
+                setId(res.data)
                 setStats(res.data.stats);
                 setSprites(res.data.sprites)
                 setMoves(res.data.moves)
@@ -36,5 +36,5 @@ useEffect(() => {
     gets(url);
 }, [url])
 
-    return [ stats, sprites, moves, types, isLoading, error];
+    return [ id, stats, sprites, moves, types, isLoading, error];
 }

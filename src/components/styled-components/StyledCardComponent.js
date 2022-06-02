@@ -14,8 +14,6 @@ export const CardContainer = styled.div`
   padding: 8px;
 `
 
-
-
 export const CardFooter = styled.div`
   height: 40px;
   display: flex;
@@ -42,3 +40,12 @@ export const PokemonPhoto = styled.img`
   box-shadow: 0.1px 5px 4px 0.1px;
   border-radius: 50px;
 `
+
+export const DetailContainer = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  width: 80%;
+  border: 2px solid green;
+  justify-content: center;
+
+` 
