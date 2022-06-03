@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { DivBotoes, BotaoCard, CardContainer,  PokemonPhoto } from "./styled-components/StyledCardComponent";
 import { useRequestDetails } from "../Hooks/useRequestDetails";
 import { useNavigate } from "react-router-dom";
 import { goToAboutPage } from "../routes/coordinator";
-import DetailComponent from "./DetailComponent"
+
 function CardComponent(props) {
     const navigate = useNavigate()
     const [id, data, sprites, moves, isLoading, error] = useRequestDetails(props.urlPokemon)
@@ -25,7 +25,6 @@ function CardComponent(props) {
        
       )
     }
-
 
 
 
