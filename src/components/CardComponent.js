@@ -1,23 +1,15 @@
 import React, { useState } from "react";
 import { DivBotoes, BotaoCard, CardContainer,  PokemonPhoto } from "./styled-components/StyledCardComponent";
 import { useRequestDetails } from "../Hooks/useRequestDetails";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { goToAboutPage } from "../routes/coordinator";
 import DetailComponent from "./DetailComponent"
 function CardComponent(props) {
     const navigate = useNavigate()
-    const [id, stats, sprites, moves, isLoading, error] = useRequestDetails(props.urlPokemon)
-    const params = useParams()
+    const [id, data, sprites, moves, isLoading, error] = useRequestDetails(props.urlPokemon)
     
-
-    const setarDetalhes = (id) => {
-      return <DetailComponent 
-        id={id.order}
-      />
-      }  
-    
-      
-
+   
+  
     return (
         <CardContainer>
             {props.nomePokemon}<br/>
@@ -25,7 +17,7 @@ function CardComponent(props) {
             <span>
                 <DivBotoes>
                     <BotaoCard>Adicionar</BotaoCard> 
-                    <BotaoCard onClick={() => goToAboutPage(navigate, 'detail')}>Detalhes</BotaoCard>
+                    <BotaoCard onClick={() => goToAboutPage(navigate, id)}>Detalhes</BotaoCard>
                 </DivBotoes>
             </span>
         </CardContainer>  

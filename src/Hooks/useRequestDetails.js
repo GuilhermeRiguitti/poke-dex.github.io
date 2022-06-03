@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 
 export const useRequestDetails= (url) => {
     const [id, setId] = useState("")
-    const [stats, setStats] = useState([])
+    const [data, setData] = useState([])
     const [sprites, setSprites] = useState({})
     const [moves, setMoves] = useState([])
     const [types, setTypes] = useState([])
@@ -19,8 +19,8 @@ export const useRequestDetails= (url) => {
             }
             })
             .then((res) => { 
-                setId(res.data)
-                setStats(res.data.stats);
+                setId(res.data.id)
+                setData(res.data.stats);
                 setSprites(res.data.sprites)
                 setMoves(res.data.moves)
                 setTypes(res.data.types)
@@ -36,5 +36,5 @@ useEffect(() => {
     gets(url);
 }, [url])
 
-    return [ id, stats, sprites, moves, types, isLoading, error];
+    return [ id, data, sprites, moves, types, isLoading, error];
 }

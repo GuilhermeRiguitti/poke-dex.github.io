@@ -4,13 +4,24 @@ import { URL_BASE } from "../constants/URL_BASE";
 import { useRequestData } from "../Hooks/useRequestData";
 import { goToAboutPage } from "../routes/coordinator";
 import { useNavigate } from "react-router-dom";
+import {React, useState} from "react";
 
- 
 export default function HomePage() { 
-  const navigate = useNavigate()
+  
+  const [contador, setContador] = useState (20)
+  const [contador2, setContador2] = useState (40)
   const [pokemons, isLoading, error] = useRequestData(URL_BASE);
+  const navigate = useNavigate()
+                                                              
+  const mudarPagina = (event) => {
+    setContador(contador + 20)
+    setContador2(contador2 + 20)
+  }
   
-  
+  const voltarPagina = (event) => {
+    setContador(contador - 20)
+  }
+
   const pokemonsList = pokemons && pokemons.map((pokemon, index) => {
     return <><CardComponent
           nomePokemon={pokemon.name.toUpperCase()}
@@ -32,6 +43,7 @@ export default function HomePage() {
         {!isLoading && pokemons && pokemons.length > 0 && pokemonsList}
         {!isLoading && pokemons && pokemons.length === 0 && (<p>Nao há nenhum Pokemon</p>)}
       </CardContainer>
+     
     </>
 
   )

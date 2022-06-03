@@ -1,6 +1,6 @@
 
-export const goToAboutPage = (navigate, pagina) => {
-    navigate(`/about/${pagina}`)
+export const goToAboutPage = (navigate, id) => {
+    navigate(`/pokemon/${id}`)
 }
 
 

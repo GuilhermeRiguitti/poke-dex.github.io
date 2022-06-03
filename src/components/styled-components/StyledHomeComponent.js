@@ -6,7 +6,7 @@ export const NavBar = styled.div`
     height: max-content;
     width: 100%;  
     align-items: center;
-    background-color: #2166FF ; 
+    background-color: rgb(0,0,240, 0.75 ) ; 
     justify-items: center;
      
     
