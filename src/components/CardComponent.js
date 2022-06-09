@@ -47,7 +47,7 @@ function CardComponent(props) {
             <img src={sprites.front_default}/>
             <span>
                 <DivBotoes>
-                    <button onClick={salvarPokemon}>Adicionar</button> 
+                    <BotaoCard onClick={salvarPokemon}>Adicionar</BotaoCard> 
                     <BotaoCard onClick={() => goToAboutPage(navigate, id)}>Detalhes</BotaoCard>
                 </DivBotoes>
             </span>

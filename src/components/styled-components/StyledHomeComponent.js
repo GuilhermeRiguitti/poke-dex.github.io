@@ -6,7 +6,7 @@ export const NavBar = styled.div`
     height: max-content;
     width: 100%;  
     align-items: center;
-    background-color: rgb(0,50,400, 0.40 ) ; 
+    background-color: transparent ; 
     justify-items: center;
      
     
@@ -18,6 +18,7 @@ export const Button = styled.button`
     padding: 0;
     border-radius: 10px;
     padding: 3px;
+    cursor: pointer;
    
 
 `
@@ -60,4 +61,5 @@ export const ButtonPage = styled.button`
     margin: 2px;
     border-radius: 3px;
     color: white;
+    cursor: pointer;
 `

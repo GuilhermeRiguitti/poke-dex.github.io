@@ -35,6 +35,7 @@ export const BotaoCard = styled.button`
   margin: 10px;
   border: 0px;
   color: white;
+  cursor: pointer;
   
 `
 
