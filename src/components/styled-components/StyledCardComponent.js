@@ -10,8 +10,9 @@ export const CardContainer = styled.div`
   align-items: center;
   margin: 10px 0px 10px 0px;
   border-radius: 10px;
-  box-shadow: 3px 3px 4px gray;
+  box-shadow: 3px 3px 4px #77361a;
   padding: 8px;
+  background-color: #F9F19999;
 `
 
 export const CardFooter = styled.div`
@@ -28,10 +29,12 @@ export const DivBotoes = styled.div`
 `
 
 export const BotaoCard = styled.button`
-  background-color: rgba(255, 0, 0, 0.4);
-  padding: 10px;
-  border-radius: 10px;
+  background-color: #c95b2c95;
+  padding: 7px;
+  border-radius: 15px;
   margin: 10px;
+  border: 0px;
+  color: white;
   
 `
 

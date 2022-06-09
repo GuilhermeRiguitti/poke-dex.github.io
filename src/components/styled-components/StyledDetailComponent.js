@@ -1,10 +1,19 @@
 import styled from "styled-components";
 
+export const DetailpageContainer = styled.div`
+    background-image: url("https://wallpaperaccess.com/full/45664.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 50px;
+    height: 95vh;
+`
+
 export const DetailContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  
   
 `
 
@@ -14,11 +23,12 @@ export const DetailCard = styled.div`
   display: grid;
   grid-template-columns: 3fr 3fr 3fr;
   width: 70%;
-  border: 2px solid green;
+  color: white;
   justify-content: center;
   margin: 50px;
   border-radius: 9px;
   box-shadow: 3px 3px 4px gray;
+  background-color:  rgb(0,50,400, 0.40 );
 
 ` 
 

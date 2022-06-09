@@ -6,11 +6,12 @@ export const NavBar = styled.div`
     height: max-content;
     width: 100%;  
     align-items: center;
-    background-color: rgb(0,0,240, 0.75 ) ; 
+    background-color: rgb(0,50,400, 0.40 ) ; 
     justify-items: center;
      
     
 `
+
 
 
 export const Button = styled.button`
@@ -35,10 +36,28 @@ export const PokeDex = styled.img`
 //aa
 export const CardContainer = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-items: center;
-
-
-   
 `
 
+export const HomeContainer = styled.div`
+    background-image: url("https://wallpaperaccess.com/full/45664.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 50px;
+`
+
+export const DivPagination = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 20%;
+    margin: auto;
+`
+
+export const ButtonPage = styled.button`
+    background-color:  #c95b2c95;
+    border: 0px;
+    margin: 2px;
+    border-radius: 3px;
+    color: white;
+`
