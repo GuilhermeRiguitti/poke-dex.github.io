@@ -4,11 +4,12 @@ import { URL_BASE } from "../constants/URL_BASE";
 import { useRequestData } from "../Hooks/useRequestData";
 import { goToAboutPage } from "../routes/coordinator";
 import { useNavigate } from "react-router-dom";
-import { React, useState} from "react";
+import { React, useState, useEffect} from "react";
 
 
 export default function HomePage() { 
   const [contador, setContador] = useState (0)
+  const [resultado, setResultado] = useState([])
   const [pokemons, id, name, data, sprites, moves, types, isLoading, error] = useRequestData(`${URL_BASE}?offset=${contador}&limit=20`);
   const navigate = useNavigate()
    
@@ -55,23 +56,35 @@ export default function HomePage() {
   const voltarPagina = (event) => {
     setContador(contador - 20)
   }
-
-
-    //const listaPokeDex = []
+  
+  
+  const pokemonsPokeDex = JSON.parse(localStorage.getItem('lista-pokemons') || '[]');
+  var todosPokemons = pokemons;
+  var pokedexPokemons = pokemonsPokeDex;
+  //const isSamePokemon = (arrayA, arrayB) => arrayA.nome === arrayB.name;
+  useEffect(() =>{
+    const removerPokemons = () => {
+      const pokemonsRemovidos = todosPokemons.filter(({name: id1 }) => 
+        !pokedexPokemons.some(({ nome: id2}) => 
+          id2 === id1,
+          
+      ))
+      setResultado(pokemonsRemovidos)
+    }
+     removerPokemons()
+  }, [resultado])
     
-    //listaPokeDex.push(pokemon)
-    //console.log(listaPokeDex)  
-
-  const pokemonsList = pokemons && pokemons.map((pokemon, index) => {
-    return <><CardComponent
+    
+ 
+    const pokemonsList = resultado && resultado.map((pokemon, index) => {
+    return <>
+        <CardComponent
           nomePokemon={pokemon.name.toUpperCase()}
           urlPokemon={pokemon.url}
         />
         </>
-
   })
-  
-  
+
   return (
     <HomeContainer>
       <NavBar>
@@ -96,9 +109,6 @@ export default function HomePage() {
         <ButtonPage value={contador} onClick={toPage9}>9</ButtonPage>
         <ButtonPage value={contador} onClick={toPage10}>10</ButtonPage>
       </DivPagination>
-     
-      
-     
     </HomeContainer>
 
   )

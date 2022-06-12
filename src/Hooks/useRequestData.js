@@ -16,10 +16,11 @@ export const useRequestData= (url) => {
         setIsLoading(true);
         axios
         .get(url,{
-            headers: {
-              "Content-Type": "application/json"
-            }
-            })
+                headers: {
+                    "Content-Type": "application/json"
+                }
+                }
+            )
             .then((res) => { 
                 setPokemons(res.data.results)
                 setId(res.data.id)
