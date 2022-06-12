@@ -2,7 +2,7 @@ import { URL_BASE_DETAIL } from "../constants/URL_BASE";
 import { useRequestData } from "../Hooks/useRequestData";
 import {  NavBar, Button, Logo, PokeDex, StatsTitle, FrontPicture, DetailCard, DetailContainer, DetailpageContainer }  
   from "./styled-components/StyledDetailComponent";
-import { goBack, goToHomePage } from "../routes/coordinator";
+import { goBack, goToHomePage, goToAboutPage } from "../routes/coordinator";
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function DetailComponent(props) {
@@ -29,8 +29,8 @@ export default function DetailComponent(props) {
   return (
     <DetailpageContainer>
       <NavBar>
-        <Button><PokeDex src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1200px-Pok%C3%A9_Ball_icon.svg.png" /></Button>
-        <Logo src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2000px-International_Pok%C3%A9mon_logo.svg.png" />
+        <Button onClick={() => goToAboutPage(navigate, 'pokedexpage')}><PokeDex src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1200px-Pok%C3%A9_Ball_icon.svg.png" /></Button>
+        <Button onClick={() => goToHomePage(navigate)}><Logo src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2000px-International_Pok%C3%A9mon_logo.svg.png" /></Button>
       </NavBar>
       <DetailContainer> 
         <DetailCard>

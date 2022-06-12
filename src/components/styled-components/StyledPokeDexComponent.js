@@ -13,10 +13,9 @@ export const NavBar = styled.div`
 
 export const Button = styled.button`
     padding: 0;
-    border-radius: 10px;
-    padding: 3px;
     cursor: pointer;
-    background-color:  #c95b2c95;
+    background-color: transparent;
+    border: 0px;
 `
 
 export const Logo = styled.img`
@@ -26,18 +25,24 @@ export const Logo = styled.img`
 `
 
 export const PokeDex = styled.img`
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
  
 `
 
 export const PokeDexCardContainer = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  justify-content: center;
-  justify-items: center;
+    @media screen and (min-width: 320px){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+    @media screen and (min-width: 768px){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-items: center;
+    }
 `
+
 
 export const CardPokeDex = styled.div`
   border: 2px solid green;

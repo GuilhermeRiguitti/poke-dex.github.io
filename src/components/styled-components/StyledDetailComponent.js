@@ -12,9 +12,9 @@ export const NavBar = styled.div`
 
 export const Button = styled.button`
     padding: 0;
-    border-radius: 10px;
-    padding: 3px;
     cursor: pointer;
+    background-color: transparent;
+    border: 0px;
 `
 
 export const Logo = styled.img`
@@ -24,10 +24,11 @@ export const Logo = styled.img`
 `
 
 export const PokeDex = styled.img`
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
  
 `
+
 
 export const DetailpageContainer = styled.div`
     background-image: url("https://wallpaperaccess.com/full/45664.jpg");
