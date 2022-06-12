@@ -1,26 +1,19 @@
 import styled from "styled-components";
-
+import card from "./images/card.png"
 
 export const CardContainer = styled.div`
   border: 2px solid green;
-  width: 200px;
+  width: 164px;
   display: flex;
+  height: 230px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  margin: 10px 0px 10px 0px;
+  margin: 40px;
   border-radius: 10px;
   box-shadow: 3px 3px 4px #77361a;
-  padding: 8px;
-  background-color: #F9F19999;
-`
-
-export const CardFooter = styled.div`
-  height: 40px;
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  justify-content: space-between;
+  background-image: url(${card});
+  background-color: white;
 `
 
 export const DivBotoes = styled.div`
@@ -29,19 +22,18 @@ export const DivBotoes = styled.div`
 `
 
 export const BotaoCard = styled.button`
-  background-color: #c95b2c95;
+  background-color: transparent;
   padding: 7px;
   border-radius: 15px;
-  margin: 10px;
+  margin: 7px 5px 7px 5px;
   border: 0px;
-  color: white;
-  cursor: pointer;
-  
+  color: green;
+  cursor: pointer
 `
 
 export const PokemonPhoto = styled.img`
-  width: 50%;
-  box-shadow: 0.1px 5px 4px 0.1px;
-  border-radius: 50px;
+  width: 100%;
+  margin-bottom: 10px;
+;
 `
 

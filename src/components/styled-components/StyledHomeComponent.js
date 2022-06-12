@@ -8,19 +8,14 @@ export const NavBar = styled.div`
     align-items: center;
     background-color: transparent ; 
     justify-items: center;
-     
-    
 `
-
-
 
 export const Button = styled.button`
     padding: 0;
     border-radius: 10px;
     padding: 3px;
     cursor: pointer;
-   
-
+    background-color:  #c95b2c95;
 `
 
 export const Logo = styled.img`
@@ -32,9 +27,8 @@ export const Logo = styled.img`
 export const PokeDex = styled.img`
     width: 50px;
     height: 50px;
- 
 `
-//aa
+
 export const CardContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -46,6 +40,7 @@ export const HomeContainer = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: 50px;
+    height: max-content;
 `
 
 export const DivPagination = styled.div`

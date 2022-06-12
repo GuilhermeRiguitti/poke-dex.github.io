@@ -14,9 +14,7 @@ import PokeDexPage from "./PokeDexPage";
     <div>
       
       {params.id === 'pokedexpage' ? <PokeDexPage/> : <DetailComponent/>}
-    
-      <button onClick={() => goToHomePage(navigate)}>Página home</button>
-      <button onClick={() => goBack(navigate)}>Voltar</button>
+  
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import { DivBotoes, BotaoCard, CardContainer,  PokemonPhoto } from "./styled-components/StyledCardComponent";
+import React from "react";
+import { DivBotoes, BotaoCard, CardContainer, PokemonPhoto} from "./styled-components/StyledCardComponent";
 import { useRequestData } from "../Hooks/useRequestData";
 import { useNavigate } from "react-router-dom";
 import { goToAboutPage } from "../routes/coordinator";
@@ -13,10 +13,7 @@ function CardComponent(props) {
             <p>{status.stat.name.toUpperCase()} : {status.base_stat} </p> 
         )
     })
-    
-    
-    
-
+ 
     function salvarPokemon() {
         var idPokemon = id;
         var nomePokemon = name;
@@ -43,8 +40,9 @@ function CardComponent(props) {
     //criar uma funcao para jogar no onclick, que ao inves de adc no localStorage, adciona em um vetor, e dpois mandar para local storage
     return (
         <CardContainer>
-            {props.nomePokemon}<br/>
-            <img src={sprites.front_default}/>
+            
+            <PokemonPhoto src={sprites.front_default}/>
+            {props.nomePokemon}
             <span>
                 <DivBotoes>
                     <BotaoCard onClick={salvarPokemon}>Adicionar</BotaoCard> 
