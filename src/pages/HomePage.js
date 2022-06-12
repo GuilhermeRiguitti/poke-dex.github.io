@@ -51,6 +51,35 @@ export default function HomePage() {
   const toPage10 = (event) => {
     setContador(200)
   }
+
+  const toPage11 = (event) => {
+    setContador(220)
+  }
+
+  const toPage12 = (event) => {
+    setContador(240)
+  }
+
+  const toPage13 = (event) => {
+    setContador(260)
+  }
+
+  const toPage14 = (event) => {
+    setContador(280)
+  }
+
+  const toPage15 = (event) => {
+    setContador(300)
+  }
+
+  const toPage16 = (event) => {
+    setContador(320)
+  }
+
+  const toPage17 = (event) => {
+    setContador(340)
+  }
+
   
   
   const voltarPagina = (event) => {
@@ -108,6 +137,14 @@ export default function HomePage() {
         <ButtonPage value={contador} onClick={toPage8}>8</ButtonPage>
         <ButtonPage value={contador} onClick={toPage9}>9</ButtonPage>
         <ButtonPage value={contador} onClick={toPage10}>10</ButtonPage>
+        <ButtonPage value={contador} onClick={toPage11}>11</ButtonPage>
+        <ButtonPage value={contador} onClick={toPage12}>12</ButtonPage>
+        <ButtonPage value={contador} onClick={toPage13}>13</ButtonPage>
+        <ButtonPage value={contador} onClick={toPage14}>14</ButtonPage>
+        <ButtonPage value={contador} onClick={toPage15}>15</ButtonPage>
+        <ButtonPage value={contador} onClick={toPage16}>16</ButtonPage>
+        <ButtonPage value={contador} onClick={toPage17}>17</ButtonPage>
+
       </DivPagination>
     </HomeContainer>
 

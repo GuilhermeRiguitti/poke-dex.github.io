@@ -58,11 +58,29 @@ export const CardPokeDex = styled.div`
   box-shadow: 3px 3px 4px #77361a;
   background-image: url(${card});
   background-color: white;
+  background-color: #1BB06E99;
 `
 export const PokemonPhoto = styled.img`
   width: 100%;
   margin-bottom: -15px;
 
+`
+
+export const DivStatus = styled.div`
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  justify-items: left;
+  text-align: left;
+  font-size: 8px;
+  width: 100%;
+  margin: 0px 0px 0px 20px;
+`
+
+export const TextoStatus = styled.p`
+  margin: 1px;
+  margin: 0px 0px 0px 2px;
 `
 
 export const DivBotoes = styled.div`

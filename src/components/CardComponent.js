@@ -1,5 +1,5 @@
 import React from "react";
-import { DivBotoes, BotaoCard, CardContainer, PokemonPhoto} from "./styled-components/StyledCardComponent";
+import { TextoNome, DivStatus, DivBotoes, BotaoCard, CardContainer, PokemonPhoto, TextoStatus} from "./styled-components/StyledCardComponent";
 import { useRequestData } from "../Hooks/useRequestData";
 import { useNavigate } from "react-router-dom";
 import { goToAboutPage } from "../routes/coordinator";
@@ -10,7 +10,7 @@ function CardComponent(props) {
     
     const pokemonData = data && data.map((status) => {
         return (
-            <p>{status.stat.name.toUpperCase()} : {status.base_stat} </p> 
+            <TextoStatus>{status.stat.name.toUpperCase()} : {status.base_stat} </TextoStatus>
         )
     })
  
@@ -18,11 +18,12 @@ function CardComponent(props) {
         var idPokemon = id;
         var nomePokemon = name;
         var fotoPokemon = sprites.front_default;
-        var statusPokemon = pokemonData;
+        var statusPokemon = data;
         var listaPokemons = JSON.parse(localStorage.getItem('lista-pokemons')|| '[]');
         listaPokemons.push({
             id: idPokemon, 
             nome: nomePokemon,
+            status: statusPokemon,
             foto: fotoPokemon,
         });
         localStorage.setItem("lista-pokemons", JSON.stringify(listaPokemons));
@@ -30,19 +31,20 @@ function CardComponent(props) {
         }  
         
     
-    
-    //const salvarLocalStorage = () => {
-        //setPokedexList(listaPokeDex)
-        //localStorage.setItem("pokedex", JSON.stringify(pokedexList))
-    //}
+  
     
     
-    //criar uma funcao para jogar no onclick, que ao inves de adc no localStorage, adciona em um vetor, e dpois mandar para local storage
+    
     return (
         <CardContainer>
-            
+             <TextoNome>{props.nomePokemon}</TextoNome>
             <PokemonPhoto src={sprites.front_default}/>
-            {props.nomePokemon}
+            
+            <DivStatus>
+        
+                {pokemonData}
+            </DivStatus>
+            
             <span>
                 <DivBotoes>
                     <BotaoCard onClick={salvarPokemon}>Adicionar</BotaoCard> 

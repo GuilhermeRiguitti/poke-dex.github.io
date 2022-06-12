@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import { BotaoCard , NavBar, Button, Logo, PokeDex, CardPokeDex, PokemonPhoto, PokeDexContainer, PokeDexCardContainer } 
+import { TextoStatus, DivStatus, DivBotoes, BotaoCard , NavBar, Button, Logo, PokeDex, CardPokeDex, PokemonPhoto, PokeDexContainer, PokeDexCardContainer } 
   from "../components/styled-components/StyledPokeDexComponent"
 import { goBack, goToHomePage } from "../routes/coordinator";
 import { goToAboutPage } from "../routes/coordinator"
 import { useNavigate } from "react-router-dom";
-import { DivBotoes } from "../components/styled-components/StyledCardComponent";
 
 export default function PokeDexPage() {
   const navigate = useNavigate() 
@@ -17,8 +16,6 @@ export default function PokeDexPage() {
     }
   },[pokemons] )
  
-
-  
       
   function attPokeDex(nome){
     var listaPokemons = JSON.parse(localStorage.getItem('lista-pokemons') );
@@ -30,14 +27,17 @@ export default function PokeDexPage() {
     
   const pokemonMap = pokemons.map((pokemon) => {
     return <CardPokeDex>
-      <PokemonPhoto src={pokemon.foto}/>
-      <p>{pokemon.nome}</p>
-      <DivBotoes>
-        <BotaoCard onClick={() => goToAboutPage(navigate, pokemon.id)}>Detalhes</BotaoCard>
-        <BotaoCard onClick={() => attPokeDex(pokemon.nome)}>Remover</BotaoCard>
-      </DivBotoes>
-    </CardPokeDex>
+              
+              <PokemonPhoto src={pokemon.foto}/>
+                <p>{pokemon.nome.toUpperCase()}</p>
+              <DivBotoes>
+                <BotaoCard onClick={() => attPokeDex(pokemon.nome)}>Remover</BotaoCard>
+                <BotaoCard onClick={() => goToAboutPage(navigate, pokemon.id)}>Detalhes</BotaoCard>
+              </DivBotoes>
+            </CardPokeDex>
   })
+
+  
   
   return (
     <PokeDexContainer>

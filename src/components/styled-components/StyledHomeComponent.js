@@ -30,7 +30,7 @@ export const PokeDex = styled.img`
 export const CardContainer = styled.div`
     @media screen and (min-width: 320px){
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         justify-items: center;
     }
     @media screen and (min-width: 768px){
