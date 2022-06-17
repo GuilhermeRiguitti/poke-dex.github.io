@@ -20,7 +20,8 @@ export default function PokeDexPage() {
     }
   }, [pokemons] )
   
-  
+  //precisei fazer uma nova requicao na api para buscar os dados para usar na batalha, achei mais facil
+  //faze uma nova requicao para isso, que recebe o id como parametro que vem do localStorage
   const pokemonsBatalha = (id) => {
     if(listaBatalha1.length === 0){
       axios.
@@ -48,36 +49,32 @@ export default function PokeDexPage() {
         }
       }
      
-      
-      const pokemon1 = listaBatalha1 && listaBatalha1.map((status) => {
-        return  <BatalhaStatus>{status.stat.name.toUpperCase()} : {status.base_stat} ||</BatalhaStatus>
-      })
+  //minha pokedex ainda nao consegui terminar, nao consegui comprar os dois valores, mas nessa parte do codigo
+  // tentei criar dois vetores de objetos para inserir os dados de dois pokemons e no final comparar os dois vetores(falta comparar)
+  //uma parte ja funciona, ja consegui receber os status e exibilo, so clika nas espadas cruzadas para realizar o teste 
+  const pokemon1 = listaBatalha1 && listaBatalha1.map((status) => {
+    return  <BatalhaStatus>{status.stat.name.toUpperCase()} : {status.base_stat} ||</BatalhaStatus>
+  })
 
+  const pokemon2 = listaBatalha2 && listaBatalha2.map((status) => {
+    return (
+      <BatalhaStatus>{status.stat.name.toUpperCase()} : {status.base_stat} ||</BatalhaStatus>
+    )
+  })
       
 
-     
-      
-
-      const pokemon2 = listaBatalha2 && listaBatalha2.map((status) => {
-        return (
-          <BatalhaStatus>{status.stat.name.toUpperCase()} : {status.base_stat} ||</BatalhaStatus>
-        )
-      })
-      
-     
-    
-    
-    function attPokeDex(nome){
-      var listaPokemons = JSON.parse(localStorage.getItem('lista-pokemons') );
-      const novaPokeDex = listaPokemons.filter((pokemon) => {
-        return pokemon.nome !== nome
-      })
-      localStorage.setItem("lista-pokemons", JSON.stringify(novaPokeDex));
-    }
+  //funcao que atualiza a pokedex quando o botao remover é acionado
+  function attPokeDex(nome){
+    var listaPokemons = JSON.parse(localStorage.getItem('lista-pokemons') );
+    const novaPokeDex = listaPokemons.filter((pokemon) => {
+      return pokemon.nome !== nome
+    })
+    localStorage.setItem("lista-pokemons", JSON.stringify(novaPokeDex));
+  }
 
     
 
-
+  // mapea o vetor coms os valores do local storage, e retorna os card montados
   const pokemonMap = pokemons.map((pokemon) => {
     return <CardPokeDex>
               <Button onClick={() => pokemonsBatalha(pokemon.id)}><BatalhaImg src="https://cdn-icons-png.flaticon.com/512/1732/1732452.png"/></Button>
