@@ -49,10 +49,9 @@ export const HomeContainer = styled.div`
 `
 
 export const DivPagination = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    width: 20%;
-    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
 `
 
 export const ButtonPage = styled.button`

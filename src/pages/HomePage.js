@@ -13,78 +13,12 @@ export default function HomePage() {
   const [pokemons, id, name, data, sprites, moves, types, isLoading, error] = useRequestData(`${URL_BASE}?offset=${contador}&limit=20`);
   const navigate = useNavigate()
    
-  const toPage1 = (event) => {
-    setContador(0)
-  }
-  const toPage2 = (event) => {
-    setContador(20)
-  }
-
-  const toPage3 = (event) => {
-    setContador(40)
-  }
-
-  const toPage4 = (event) => {
-    setContador(60)
-  }
-
-  const toPage5 = (event) => {
-    setContador(80)
-  }
-
-  const toPage6 = (event) => {
-    setContador(120)
-  }
-
-  const toPage7 = (event) => {
-    setContador(140)
-  }
-
-  const toPage8 = (event) => {
-    setContador(160)
-  }
-
-  const toPage9 = (event) => {
-    setContador(180)
-  }
-
-  const toPage10 = (event) => {
-    setContador(200)
-  }
-
-  const toPage11 = (event) => {
-    setContador(220)
-  }
-
-  const toPage12 = (event) => {
-    setContador(240)
-  }
-
-  const toPage13 = (event) => {
-    setContador(260)
-  }
-
-  const toPage14 = (event) => {
-    setContador(280)
-  }
-
-  const toPage15 = (event) => {
-    setContador(300)
-  }
-
-  const toPage16 = (event) => {
-    setContador(320)
-  }
-
-  const toPage17 = (event) => {
-    setContador(340)
-  }
-
   
-  
-  const voltarPagina = (event) => {
-    setContador(contador - 20)
+
+  const mudarPagina = (offset) => {
+    setContador(offset)
   }
+  
   
   
   const pokemonsPokeDex = JSON.parse(localStorage.getItem('lista-pokemons') || '[]');
@@ -127,24 +61,63 @@ export default function HomePage() {
         {!isLoading && pokemons && pokemons.length === 0 && (<p>Nao há nenhum Pokemon</p>)}
       </CardContainer>
       <DivPagination>
-        <ButtonPage value={contador} onClick={toPage1}>1</ButtonPage>
-        <ButtonPage value={contador} onClick={toPage2}>2</ButtonPage>
-        <ButtonPage value={contador} onClick={toPage3}>3</ButtonPage>
-        <ButtonPage value={contador} onClick={toPage4}>4</ButtonPage>
-        <ButtonPage value={contador} onClick={toPage5}>5</ButtonPage>
-        <ButtonPage value={contador} onClick={toPage6}>6</ButtonPage>
-        <ButtonPage value={contador} onClick={toPage7}>7</ButtonPage>
-        <ButtonPage value={contador} onClick={toPage8}>8</ButtonPage>
-        <ButtonPage value={contador} onClick={toPage9}>9</ButtonPage>
-        <ButtonPage value={contador} onClick={toPage10}>10</ButtonPage>
-        <ButtonPage value={contador} onClick={toPage11}>11</ButtonPage>
-        <ButtonPage value={contador} onClick={toPage12}>12</ButtonPage>
-        <ButtonPage value={contador} onClick={toPage13}>13</ButtonPage>
-        <ButtonPage value={contador} onClick={toPage14}>14</ButtonPage>
-        <ButtonPage value={contador} onClick={toPage15}>15</ButtonPage>
-        <ButtonPage value={contador} onClick={toPage16}>16</ButtonPage>
-        <ButtonPage value={contador} onClick={toPage17}>17</ButtonPage>
-
+        <ButtonPage value={contador} onClick={() => mudarPagina(0)}>1</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(20)}>2</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(40)}>3</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(60)}>4</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(80)}>5</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(100)}>6</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(120)}>7</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(140)}>8</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(160)}>9</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(180)}>10</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(200)}>11</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(220)}>12</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(240)}>13</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(260)}>14</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(280)}>15</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(300)}>16</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(320)}>17</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(340)}>18</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(360)}>19</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(380)}>20</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(400)}>21</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(420)}>22</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(440)}>23</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(460)}>24</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(480)}>25</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(500)}>26</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(520)}>27</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(540)}>28</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(560)}>29</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(580)}>30</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(600)}>31</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(620)}>32</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(640)}>33</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(660)}>34</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(680)}>36</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(700)}>37</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(720)}>38</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(740)}>39</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(760)}>40</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(780)}>41</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(800)}>42</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(820)}>43</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(840)}>44</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(860)}>45</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(880)}>46</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(900)}>47</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(920)}>48</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(940)}>49</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(960)}>50</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(980)}>51</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(1000)}>52</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(1020)}>53</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(1040)}>54</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(1060)}>55</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(1080)}>56</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(1100)}>57</ButtonPage>
+        <ButtonPage value={contador} onClick={() => mudarPagina(1120)}>58</ButtonPage>
       </DivPagination>
     </HomeContainer>
 

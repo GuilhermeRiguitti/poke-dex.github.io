@@ -45,7 +45,7 @@ export const PokeDexCardContainer = styled.div`
 
 
 export const CardPokeDex = styled.div`
-  border: 2px solid green;
+  border: 1px solid green;
   width: 164px;
   display: flex;
   height: 230px;
@@ -53,7 +53,7 @@ export const CardPokeDex = styled.div`
   justify-content: flex-end;
   align-items: center;
   justify-items: flex-end;
-  margin: 40px;
+  margin: 50px;
   border-radius: 10px;
   box-shadow: 3px 3px 4px #77361a;
   background-image: url(${card});
@@ -65,7 +65,41 @@ export const PokemonPhoto = styled.img`
   margin-bottom: -15px;
 
 `
+export const BatalhaImg = styled.img`
+ width: 30%;
+ margin-bottom: -40px;
+ margin-right: 220px;
+`
 
+export const BatalhaStatus = styled.p`
+  font-family: 'Open Sans';
+  font-weight: 700;
+  margin: 10px;
+`
+export const BatalhaDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  color: white
+  
+`
+export const TituloBatalha = styled.div`
+  display: flex;
+  margin-top: 100px;
+  font-size: larger;
+  font-weight: bolder;
+  color: white;
+  justify-content: center;
+  width: 100%;
+`
+export const TituloOponente = styled.div`
+  display: flex;
+  margin-top: 10px;
+  font-size: larger;
+  font-weight: bolder;
+  color: green;
+  justify-content: center;
+  width: 100%;
+`
 export const DivStatus = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
